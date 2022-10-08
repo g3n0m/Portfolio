@@ -8,6 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">        
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/style.css">
+		<script type="text/javascript" src="JS/emailjs.js"></script>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 		<script type="text/javascript">
 				(function() {
@@ -90,11 +91,11 @@
 				<p>Для всех желающих связаться со мной, могу порекомендовать заполнить нижепредложенную форму:</p>				
 				<form id="contact-form">
 					<input type="hidden" name="contact_number">
-					<input class="inputstyle" id="name" type="text" name="user_name"placeholder="Иванов Иван" required>
-					<!--input class="inputstyle" id="phone" type="tel" name="user_phone" placeholder="+7-999-999-9999" required pattern="+[1-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}"-->
-					<input class="inputstyle" id="email" type="email" name="user_email" placeholder="writer@example.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" minlength="3" maxlength="64">
+					<input class="inputstyle" id="fullName" type="text" name="user_name" placeholder="Иванов Иван" required>
+					<input class="inputstyle" id="phone_id" type="tel" name="user_phone" placeholder="+7-999-999-9999" required pattern="+[1-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}">
+					<input class="inputstyle" id="email_id" type="email" name="user_email" placeholder="writer@example.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" minlength="3" maxlength="64">
 					<textarea class="textareastyle" id="message" name="message" required placeholder="Ваше сообщение..."></textarea>
-					<input class="submit" type="submit" value="Отправить сообщение">
+					<input onClick="SendMail()" class="submit" type="submit" value="Отправить сообщение">
 				</form>
 				<p class="messenger-text">... или найдите меня в одном из мессенджеров или социальной сети</p>
 				<div class="social-networks">
