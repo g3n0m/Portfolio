@@ -31,7 +31,14 @@
 								});
 				});
 			}
-	</script>
+		</script>
+		<script type="text/javascript">
+			const form = document.getElementById('contact-form');
+			form.addEventListener('submit', function handleSubmit(event) {
+				event.preventDefault();
+				form.reset();
+			});
+		</script>
 	</head>
 	<body>      
 		<header>
