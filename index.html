@@ -39,7 +39,7 @@
 				<div class="first">IP.Trunilov</div>
 				<div class="second">ИП Трунилов | Портфолио</div>
 				<div class="header-text">Разработка Web-продуктов любой сложности:<br />от сайта-визитки до CRM-системы</div>
-				<button>Оставить заявку</button>
+				<button onclick="window.location.href='#contacts'">Оставить заявку</button>
 			</div>            
 			<nav>
 				<ul>
@@ -59,7 +59,41 @@
 					<p>Более чем за 15 лет работы в сфере web-development удалось поучаствовать в разработке огромного количества  всевозможных проектов. От теплых и уютных сайтов-визиток,  до суровых и могучих CRM-систем в помощь корпоративному  бизнесу моих дорогих клиентов.</p>
 					<p>Мы неизменно стараемся идти в ногу со временем, сиречь использовать все основные и передовые технологии web-разработки, а так же не забывать про добрый и “ламповый” подход к каждому заказчику и потенциальному клиенту.</p>
 					<p>Я рад буду любому конструктивному общению и постараюсь Вам помочь!</p>
-					<button>Оставить заявку</button>
+					<button onclick="window.location.href='#contacts'">Оставить заявку</button>
+				</div>
+			</article>
+			<article class="time-line">
+				<div class="timeline">
+					<div class="container left">
+						<div class="content">
+							<h2>2002</h2>
+							<p>Выпуск из Самарского Лицея Информационых Технологий с углубленным изучением компьютерных специальностей. Базовые знания html/css, ООП, а так же графического дизайна. Поступление в Самарский Государственный Аэрокосмический Университет (ЕГЭ, бюджетиное отделение)</p>
+						</div>
+					</div>	
+					<div class="container right">
+						<div class="content">
+							<h2>2004</h2>
+							<p>Академический отпуск в Самарском Государственном Аэрокосмическом Университете. Работа по специальности html/css верстальщик, web-дизайнер, администратор интернет-ресурсов</p>
+						</div>
+					</div>				
+					<div class="container left">
+						<div class="content">
+							<h2>2006</h2>
+							<p>Переезд в Москву, работа в компании ООО АМСКОМ Интернет Консалтинг. Развитие от штатного html/css-верстальщика и сотрудника отдела технической поддержки до компаньона по бизнесу</p>
+						</div>
+					</div>
+					<div class="container right">
+						<div class="content">
+							<h2>2017</h2>
+							<p>Открытие собственного ИП и бизнеса по web-разработке. Координация деятельности команды outsorce-разработчиков (около 10 человек)</p>
+						</div>
+					</div>
+					<div class="container left">
+						<div class="content">
+							<h2>2022</h2>
+							<p>Обучение в компании SkillFactory по специальности Fullstack-разработчик на Python. Актуализация знаний по Front-end разработке</p>
+						</div>
+					</div>
 				</div>
 			</article>
 			<article class="works" id="works">
@@ -95,7 +129,6 @@
 					<input class="inputstyle" id="phone_id" type="tel" name="user_phone" placeholder="+7-999-999-9999" required pattern="+[1-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}">
 					<input class="inputstyle" id="email_id" type="email" name="user_email" placeholder="writer@example.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" minlength="3" maxlength="64">
 					<textarea class="textareastyle" id="message" name="message" required placeholder="Ваше сообщение..."></textarea>
-					<!--input onClick="SendMail()" id="btn" class="submit" type="submit" value="Отправить сообщение"-->
 					<div class="captcha-container">
 						<div class="captcha-container-first">
 								<div class="captcha" id="captcha"><script>createCaptcha();</script></div>
