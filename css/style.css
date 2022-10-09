@@ -36,8 +36,47 @@ header {
     background: url(../images/header-bg.jpg) no-repeat right;
     height: 596px;    
 }
-@media screen and (max-width: 1400px) and (min-width: 1100px) {
 
+header .menu-btn {
+    display: none;
+    float: right;
+    margin: 20px 20px 0 0;
+	width: 30px;
+	height: 30px;
+	position: relative;
+	z-index: 2;
+	overflow: hidden;
+    cursor: pointer;
+}
+header .menu-btn span {
+	width: 30px;
+	height: 2px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	transition: all 0.5s;
+}
+header .menu-btn.active span {
+    background-color: #000;
+}
+header .menu-btn span:nth-of-type(2) {
+	top: calc(50% - 5px);
+}
+header .menu-btn span:nth-of-type(3) {
+	top: calc(50% + 5px);
+}
+header .menu-btn.active span:nth-of-type(1) {
+    display: none;
+}
+header .menu-btn.active span:nth-of-type(2) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(45deg);  
+}
+header .menu-btn.active span:nth-of-type(3) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(-45deg); 
 }
 
 header nav {
@@ -999,34 +1038,62 @@ footer {
     }
     header .logo {
         margin-left: 20px;
-        margin-top: 10px;
+        margin-top: 20px;
     }
     header .logo .first {
-        font-size: 30px;
+        font-size: 36px;
         line-height: 25px;    
     }
+    header .logo .second {
+        font-size: 13px;
+    }
     header .header-text {
-        margin-top: 0;
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 1.2em;
     }
     header button {
         border-radius: 20px;
         font-size: 11px;
         padding: 3px 10px 4px 10px;
         margin-top: 10px;
+        display: none;
     }
-    header nav ul {        
-        margin-right: 25px;
-        margin-top: 15px;
-    }
-    header nav li {    
+    header .menu-btn {
         display: block;
+    }
+    header .menu-block.active {
+        transform: translateY(0%);
+    } 
+    header .menu-block {
+        background-color: #fff;        
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        text-align: center;
+        justify-content: stretch;
+        border-bottom: 2px solid #000;
+        transform: translateY(-100%);
+        transition: transform 0.5s; 
+    }
+    header .menu-block ul {        
+        margin-right: 85px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    header .menu-block li {    
+        display: unset;
         text-align: right;
         margin-right: 0;
         line-height: 1.5em;
     }
-    header nav a {    
+    header .menu-block a {    
         font-size: 20px;
+        color: #000;
     }
+
     .about-me {
         margin: 20px;
         display: flex;

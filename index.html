@@ -14,10 +14,10 @@
 		<script type="text/javascript" src="JS/js-sorce.js"></script>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 		<script type="text/javascript">
-				(function() {
-						// https://dashboard.emailjs.com/admin/account
-						emailjs.init('aiK6DJP1F2wHsQR6U');
-				})();
+			(function() {
+					// https://dashboard.emailjs.com/admin/account
+					emailjs.init('aiK6DJP1F2wHsQR6U');
+			})();
 		</script>
 		<script type="text/javascript">
 			window.onload = function() {
@@ -42,9 +42,14 @@
 				<div class="first">IP.Trunilov</div>
 				<div class="second">ИП Трунилов | Портфолио</div>
 				<div class="header-text">Разработка Web-продуктов любой сложности:<br />от сайта-визитки до CRM-системы</div>
-				<button onclick="window.location.href='#contacts'">Оставить заявку</button>
+				<button onclick="window.location.href='#contacts'">Оставить заявку</button>				
+			</div>			
+			<div class="menu-btn">
+				<span></span>
+				<span></span>
+				<span></span>
 			</div>            
-			<nav>
+			<nav class="menu-block">
 				<ul>
 					<li><a href="#about">О себе</a></li>
 					<li><a href="#works">Работы</a></li>
@@ -157,5 +162,13 @@
 				</div>
 			</div>
 		</footer>		
+		<script type="text/javascript">
+			let menuBtn = document.querySelector('.menu-btn');
+			let menu = document.querySelector('.menu-block');
+			menuBtn.addEventListener('click', function() {
+				menuBtn.classList.toggle('active');
+				menu.classList.toggle('active');				
+			})
+		</script>
 	</body>
 </html>
