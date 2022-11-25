@@ -1,11 +1,16 @@
-function SendMail() {
-  var params = {
-    from_name : document.getElementById("fullName").value,
-    phone_id : document.getElementById("phone_id").value,
-    email_id : document.getElementById("email_id").value,
-    message : document.getElementById("message").value
-  }
-  emailjs.send("service_p9plfb8", "template_o7m719a", params).then(function (res) {
-    alert("Сообщение успешно отправлено!");
-  })
+function MailFunc () {
+    emailjs.init('aiK6DJP1F2wHsQR6U');
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // generate a five digit number for the contact_number variable
+        this.contact_number.value = Math.random() * 100000 | 0;
+        // these IDs from the previous steps
+        emailjs.sendForm('contact_service', 'contact_form', this)
+            .then(function() {
+                console.log('SUCCESS!');
+            }, function(error) {
+                console.log('FAILED...', error);
+            });
+    });
 }

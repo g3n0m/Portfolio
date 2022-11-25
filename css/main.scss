@@ -1,0 +1,50 @@
+@import "reset"; // Обнуление и сброс параметров
+@import "fonts"; // Настройки шрифтов
+@import "header"; // Блок Header (шапка, лого, меню)
+@import "about"; // Блок About-me (обо не, фото, текст)
+@import "timeline"; // Блок с хронологией по годам
+@import "works"; // Блок с примерами работ
+@import "footer"; // Блок Footer (подвал, контактная форма)
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $FirstFont;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  font-style: normal;
+  color: #000;
+  min-width: 320px;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    color: rgb(185, 185, 185);
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+  }
+}
+
+button {
+  display: inline-block;
+  text-align: center;
+  background-color: #F29F21;
+  border-radius: 40px;
+  border: none;
+  font-weight: 550;
+  color: #fff;
+  margin-top: 70px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.3s; /* Safari */
+  transition-duration: 0.3s;
+
+  &:hover {
+    background-color: #D38209;
+  }
+}

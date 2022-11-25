@@ -9,40 +9,17 @@
 		<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">       
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/style.css">				
+		<link rel="stylesheet" href="css/main.css">
 		<script type="text/javascript" src="JS/js-sorce.js"></script>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-		<script type="text/javascript">
-			(function() {
-					// https://dashboard.emailjs.com/admin/account
-					emailjs.init('aiK6DJP1F2wHsQR6U');
-			})();
-		</script>
-		<script type="text/javascript">
-			window.onload = function() {
-				document.getElementById('contact-form').addEventListener('submit', function(event) {
-						event.preventDefault();
-						// generate a five digit number for the contact_number variable
-						this.contact_number.value = Math.random() * 100000 | 0;
-						// these IDs from the previous steps
-						emailjs.sendForm('contact_service', 'contact_form', this)
-								.then(function() {
-										console.log('SUCCESS!');
-								}, function(error) {
-										console.log('FAILED...', error);
-								});
-				});
-			}
-		</script>
 	</head>
-	<body>      
+	<body onLoad="MailFunc()">
 		<header>
 			<div class="logo">
 				<div class="first">IP.Trunilov</div>
 				<div class="second">ИП Трунилов | Портфолио</div>
 				<div class="header-text">Разработка Web-продуктов любой сложности:<br />от сайта-визитки до CRM-системы</div>
-				<button onclick="window.location.href='#contacts'">Оставить заявку</button>				
+				<button onclick="jump('contacts')">Оставить заявку</button>
 			</div>			
 			<div class="menu-btn">
 				<span></span>
@@ -51,9 +28,9 @@
 			</div>            
 			<nav class="menu-block">
 				<ul>
-					<li><a href="#about">О себе</a></li>
-					<li><a href="#works">Работы</a></li>
-					<li><a href="#contacts">Контакты</a></li>
+					<li><a onclick="jump('about')">О себе</a></li>
+					<li><a onclick="jump('works')">Работы</a></li>
+					<li><a onclick="jump('contacts')">Контакты</a></li>
 				</ul>
 			</nav>
 		</header>	        
@@ -61,13 +38,12 @@
 			<article class="about-me" id="about">
 				<div class="photo"><img src="images/my-photo-1920.jpg" alt="IP.Trunilov"></div>
 				<div class="welcome-text">
-					<h1>Здравия! Меня зовут Михаил и я - web-разработчик</h1>
-					<p>Категорически приветствую всех у себя на страничке!</p>
+					<h1>Меня зовут Михаил и я - web-разработчик</h1>					
 					<p>Позвольте представить Вам самые интересные проекты, которые мне совместно с моей командой довелось реализовать.</p>					
 					<p>Более чем за 15 лет работы в сфере web-development удалось поучаствовать в разработке огромного количества  всевозможных проектов. От теплых и уютных сайтов-визиток,  до суровых и могучих CRM-систем в помощь корпоративному  бизнесу моих дорогих клиентов.</p>
 					<p>Мы неизменно стараемся идти в ногу со временем, сиречь использовать все основные и передовые технологии web-разработки, а так же не забывать про добрый и “ламповый” подход к каждому заказчику и потенциальному клиенту.</p>
 					<p>Я рад буду любому конструктивному общению и постараюсь Вам помочь!</p>
-					<button onclick="window.location.href='#contacts'">Оставить заявку</button>
+					<button onclick="jump('contacts')">Оставить заявку</button>
 				</div>
 			</article>
 			<article class="time-line">
@@ -75,7 +51,7 @@
 					<div class="container left">
 						<div class="content">
 							<h2>2002</h2>
-							<p>Выпуск из Самарского Лицея Информационых Технологий с углубленным изучением компьютерных специальностей. Базовые знания html/css, ООП, а так же графического дизайна. Поступление в Самарский Государственный Аэрокосмический Университет (ЕГЭ, бюджетиное отделение)</p>
+							<p>Выпуск из Самарского Лицея Информационных Технологий с углубленным изучением компьютерных специальностей. Базовые знания html/css, ООП, а так же графического дизайна. Поступление в Самарский Государственный Аэрокосмический Университет (ЕГЭ, бюджетное отделение)</p>
 						</div>
 					</div>	
 					<div class="container right">
@@ -109,7 +85,7 @@
 				<div class="projects">
 					<div class="project-block">
 						<div class="project-icon"><img src="images/projects/foreverliving.jpg" alt=""></div>
-						<div class="project-description">Корпоративный портал с личным кабинетом, интернет магазин с функцией покупки, оплаты, интеграция с 1С, нелинейная система бонусных поощрений и многе другое</div>
+						<div class="project-description">Корпоративный портал с личным кабинетом, интернет магазин с функцией покупки, оплаты, интеграция с 1С, нелинейная система бонусных поощрений и многое другое</div>
 					</div>
 					<div class="project-block">
 						<div class="project-icon"><img src="images/projects/rsins.jpg" alt=""></div>
@@ -117,11 +93,15 @@
 					</div>
 					<div class="project-block">
 						<div class="project-icon"><img src="images/projects/chienergy.jpg" alt=""></div>
-						<div class="project-description">Мобильное приложение для Android и iOs, а так же корпоративный promo-сайт по тематике Восточной предсказательной технллогии</div>
+						<div class="project-description">Мобильное приложение для Android и iOS, а так же корпоративный promo-сайт по тематике Восточной предсказательной технологии</div>
 					</div>
 					<div class="project-block">
 						<div class="project-icon"><img src="images/projects/herbalife.jpg" alt=""></div>
 						<div class="project-description">Разработка, поддержка и модернизация основного и дополнительных (Promo) web-сайтов</div>
+					</div>
+					<div class="project-block">
+						<div class="project-icon"><img src="images/projects/aeroflot.jpg" alt=""></div>
+						<div class="project-description">Участие в разработке закрытой системы мониторинга абонентских номеров КПК на базе Clickhouse</div>
 					</div>
 				</div>
 				<div class="title last"><h2>... и многое другое!</h2></div>
@@ -130,8 +110,8 @@
 		<footer id="contacts">
 			<div class="contacts-block">
 				<h2>Контакты</h2>
-				<p>Для всех желающих связаться со мной, могу порекомендовать заполнить нижепредложенную форму:</p>				
-				<form id="contact-form">
+				<p>Для всех желающих связаться со мной, могу порекомендовать заполнить предложенную ниже форму:</p>
+				<form id="contact-form" class="contact-form">
 					<input type="hidden" name="contact_number">
 					<input class="inputstyle" id="fullName" type="text" name="user_name" placeholder="Иванов Иван" required>
 					<input class="inputstyle" id="phone_id" type="tel" name="user_phone" placeholder="+7-999-999-9999" required pattern="+[1-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}">
@@ -139,7 +119,7 @@
 					<textarea class="textareastyle" id="message" name="message" required placeholder="Ваше сообщение..."></textarea>
 					<div class="captcha-container">
 						<div class="captcha-container-first">
-								<div class="captcha" id="captcha"><script>createCaptcha();</script></div>
+							<div class="captcha" id="captcha"><script>createCaptcha();</script></div>
 							<div class="captcha-restart"><a onclick="createCaptcha()">Обновить</a></div>
 						</div>
 						<div class="captcha-container-second">
@@ -153,12 +133,12 @@
 				</form>
 				<p class="messenger-text">... или найдите меня в одном из мессенджеров или социальной сети</p>
 				<div class="social-networks">
-					<div><a href=""><img src="images/youtube.png" alt="YouTube"></a></div>
-					<div><a href=""><img src="images/facebook.png" alt="Facebook"></a></div>
-					<div><a href=""><img src="images/instagram.png" alt="Instagram"></a></div>
-					<div><a href=""><img src="images/telegram.png" alt="Telegram"></a></div>
-					<div><a href=""><img src="images/vk.png" alt="VK"></a></div>
-					<div><a href=""><img src="images/whatsapp.png" alt="Whatsapp"></a></div>
+					<div><a href="https://www.youtube.com/channel/UC2f64gDIBG9Qr018jQV-w4Q" target="_blank"><img src="images/youtube.png" alt="YouTube"></a></div>
+					<div><a href="https://www.facebook.com/g3n0m" target="_blank"><img src="images/facebook.png" alt="Facebook"></a></div>
+					<div><a href="https://www.instagram.com/g3n0m/" target="_blank"><img src="images/instagram.png" alt="Instagram"></a></div>
+					<div><a href="https://t.me/TruForce" target="_blank"><img src="images/telegram.png" alt="Telegram"></a></div>
+					<div><a href="https://vk.com/g3n0m" target="_blank"><img src="images/vk.png" alt="VK"></a></div>
+					<!--div><a href=""><img src="images/whatsapp.png" alt="Whatsapp"></a></div-->
 				</div>
 			</div>
 		</footer>		
@@ -169,6 +149,11 @@
 				menuBtn.classList.toggle('active');
 				menu.classList.toggle('active');				
 			})
+
+			function jump(h) {
+				let top = document.getElementById(h).offsetTop;
+				window.scrollTo(0, top);
+			}
 		</script>
 	</body>
 </html>

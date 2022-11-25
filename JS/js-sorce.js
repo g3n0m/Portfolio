@@ -1,5 +1,22 @@
 let captcha = new Array();
 
+function MailFunc() {
+  emailjs.init('aiK6DJP1F2wHsQR6U');
+
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    // generate a five digit number for the contact_number variable
+    this.contact_number.value = Math.random() * 100000 | 0;
+    // these IDs from the previous steps
+    emailjs.sendForm('contact_service', 'contact_form', this)
+        .then(function() {
+          console.log('SUCCESS!');
+        }, function(error) {
+          console.log('FAILED...', error);
+        });
+  });
+}
+
 function createCaptcha() {
   const activeCaptcha = document.getElementById("captcha");
   for (q = 0; q < 6; q++) {
@@ -22,6 +39,7 @@ function SendMail() {
   }
   emailjs.send("service_p9plfb8", "template_o7m719a", params).then(function (res) {
     alert("Сообщение успешно отправлено!");
+    location.reload();
   })  
 }
 
