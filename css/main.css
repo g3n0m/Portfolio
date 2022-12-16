@@ -77,12 +77,12 @@ select {
   }
 }
 @font-face {
-  src: url("../fonts/Montserrat/static/Montserrat-Regular.ttf");
-  font-family: "Montserrat Regular";
+  src: url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+  font-family: "MontserratRegular";
 }
 @font-face {
-  src: url("../fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf");
-  font-family: "PlayfairDisplay Regular";
+  src: url("https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap");
+  font-family: "PlayfairDisplayRegular";
 }
 header {
   background: url(../images/header-bg.jpg) no-repeat right;
@@ -94,7 +94,7 @@ header .logo {
   margin-top: 80px;
 }
 header .logo .first {
-  font-family: "PlayfairDisplay Regular", serif;
+  font-family: "Playfair Display", serif;
   font-size: 70px;
   line-height: 93px;
   font-weight: 400;
@@ -1260,7 +1260,7 @@ html {
 }
 
 body {
-  font-family: "Montserrat Regular", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   line-height: 24px;
   font-weight: 400;

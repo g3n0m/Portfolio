@@ -1,12 +1,12 @@
 @font-face {
-  src: url('../fonts/Montserrat/static/Montserrat-Regular.ttf');
-  font-family: "Montserrat Regular";
+  src: url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+  font-family: "MontserratRegular";
 }
 
 @font-face {
-  src: url('../fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf');
-  font-family: "PlayfairDisplay Regular";
+  src: url('https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap');
+  font-family: "PlayfairDisplayRegular";
 }
 
-$FirstFont: 'Montserrat Regular', sans-serif;
-$SecondFont: 'PlayfairDisplay Regular', serif;
+$FirstFont: 'Montserrat', sans-serif;
+$SecondFont: 'Playfair Display', serif;
